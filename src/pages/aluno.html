@@ -16,7 +16,7 @@
 
     <header class="fixed top-0 w-full bg-white z-50 shadow-sm">
         <div class="flex items-center p-5">
-            <a href="/index.html" class="p-2 -ml-2">
+            <a href="index.html" class="p-2 -ml-2">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
             </a>
             <h1 class="ml-4 text-xl font-extrabold text-[#0F172A]">Perfil do Aluno</h1>
@@ -82,7 +82,7 @@
                     </svg>
                 </div>
 
-                <button onclick="event.stopPropagation(); console.log('Iniciando Rotina...')" 
+                <button onclick="event.stopPropagation(); openRegisterModal()" 
                         class="w-full bg-[#052A80] py-5 flex items-center justify-center gap-3 transition-all border-none outline-none ripple-container js-ripple-light">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                         <polygon points="5 3 19 12 5 21 5 3"></polygon>
@@ -191,6 +191,47 @@
             </button>
         </div>
     </div>
+    <div id="registerTypeModal" class="fixed inset-0 bg-black/60 z-[3000] hidden opacity-0 transition-opacity duration-300 flex items-end">
+        <div id="registerContent" class="w-full bg-white rounded-t-[32px] p-8 translate-y-full transition-transform duration-300 ease-out">
+            
+            <div class="w-12 h-1.5 bg-slate-200 rounded-full mx-auto mb-10"></div>
+
+            <div class="text-center mb-10">
+                <h2 class="text-[#0F172A] text-xl font-black leading-tight">
+                    Escolha o tipo de registro <br> da sessão
+                </h2>
+            </div>
+
+            <div class="space-y-4 mb-6">
+                
+                <button onclick="location.href='./registro-botoes.html'" 
+                        class="w-full bg-[#052A80] py-5 rounded-2xl flex items-center justify-center gap-4 shadow-lg active:scale-[0.97] transition-all ripple-container js-ripple-light">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <path d="M9 9h.01"></path><path d="M15 9h.01"></path>
+                        <path d="M9 15h.01"></path><path d="M15 15h.01"></path>
+                    </svg>
+                    <span class="text-white font-extrabold text-sm uppercase tracking-widest">Registro por Botões</span>
+                </button>
+
+                <button onclick="location.href='./registro-voz.html'" 
+                        class="w-full bg-[#052A80] py-5 rounded-2xl flex items-center justify-center gap-4 shadow-lg active:scale-[0.97] transition-all ripple-container js-ripple-light">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                        <line x1="12" y1="19" x2="12" y2="23"></line>
+                        <line x1="8" y1="23" x2="16" y2="23"></line>
+                    </svg>
+                    <span class="text-white font-extrabold text-sm uppercase tracking-widest">Registro por Voz</span>
+                </button>
+
+            </div>
+
+            <button onclick="closeRegisterModal()" class="w-full py-4 text-slate-400 font-bold text-xs uppercase tracking-widest active:text-slate-600 transition-colors">
+                Cancelar
+            </button>
+        </div>
+    </div>
 </body>
 <script>
     function createRipple(event, type) {
@@ -255,7 +296,30 @@
     // Fechar ao clicar no fundo escuro
     modal.addEventListener('click', (e) => {
         if(e.target === modal) closeProfileModal();
-});
+    });
+    const regModal = document.getElementById('registerTypeModal');
+    const regContent = document.getElementById('registerContent');
+
+    function openRegisterModal() {
+        regModal.classList.remove('hidden');
+        setTimeout(() => {
+            regModal.classList.remove('opacity-0');
+            regContent.classList.remove('translate-y-full');
+        }, 10);
+    }
+
+    function closeRegisterModal() {
+        regContent.classList.add('translate-y-full');
+        regModal.classList.add('opacity-0');
+        setTimeout(() => {
+            regModal.classList.add('hidden');
+        }, 300);
+    }
+
+    // Fechar ao clicar fora (fundo escuro)
+    regModal.addEventListener('click', (e) => {
+        if(e.target === regModal) closeRegisterModal();
+    });
 </script>
 </html>
 <style>
