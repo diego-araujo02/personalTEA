@@ -16,6 +16,19 @@ body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); paddi
     position: sticky; top: 0; z-index: 100;
 }
 
+.img__container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3.5rem;
+}
+
+.logo-app{
+    width: 70%;
+}
+
 .tabs-container { display: flex; gap: 40px; margin-bottom: 20px; align-items: center; justify-content: center; }
 .tab-item { 
     font-size: 1.5rem; font-weight: 800; color: #cbd5e1; margin: 0; 
