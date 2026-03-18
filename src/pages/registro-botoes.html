@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Registro por Botões - PersonalTEA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
+        
+        .btn-shadow { 
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+            transition: all 0.1s; /* transition-all duration-100 */
+        }
+
+        .btn-shadow:active {
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06); /* active:shadow-inner */
+            transform: scale(0.98); /* active:scale-[0.98] */
+        }
+    </style>
+</head>
+<body class="bg-[#f8fafc] h-screen flex flex-col overflow-hidden">
+
+    <header class="bg-white border-b border-slate-100 px-6 py-4 pt-12">
+        <div class="flex items-center justify-between">
+            <button class="p-2 bg-slate-50 rounded-full text-slate-400 active:scale-90 transition-transform">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            
+            <div class="text-center">
+                <span class="text-[9px] font-bold text-[#052A80] uppercase tracking-[2px]">Exercício 1 de 4</span>
+                <h1 class="text-lg font-black text-[#0F172A] leading-tight">Circuito de Equilíbrio</h1>
+            </div>
+
+            <button class="p-2 bg-slate-50 rounded-full text-[#052A80] active:scale-90 transition-transform">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+    </header>
+
+    <section class="px-6 py-4 bg-slate-50">
+        <div class="bg-white rounded-[24px] p-5 shadow-sm border border-slate-100 relative">
+            
+            <div id="q-escala" class="flex flex-col items-center">
+                <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-3">Velocidade de Execução</p>
+                <div class="flex gap-2 w-full justify-between">
+                    <button class="w-10 h-10 rounded-xl border-2 border-slate-100 text-slate-400 font-bold active:bg-[#052A80] active:text-white transition-all">1</button>
+                    <button class="w-10 h-10 rounded-xl border-2 border-slate-100 text-slate-400 font-bold active:bg-[#052A80] active:text-white transition-all">2</button>
+                    <button class="w-10 h-10 rounded-xl border-2 border-slate-100 text-slate-400 font-bold active:bg-[#052A80] active:text-white transition-all">3</button>
+                    <button class="w-10 h-10 rounded-xl border-2 border-slate-100 text-slate-400 font-bold active:bg-[#052A80] active:text-white transition-all">4</button>
+                    <button class="w-10 h-10 rounded-xl border-2 border-slate-100 text-slate-400 font-bold active:bg-[#052A80] active:text-white transition-all">5</button>
+                </div>
+            </div>
+
+            <div class="flex justify-center gap-1.5 mt-4">
+                <div class="w-4 h-1 bg-[#052A80] rounded-full"></div>
+                <div class="w-1.5 h-1 bg-slate-200 rounded-full"></div>
+            </div>
+
+            <button class="absolute left-2 top-1/2 -translate-y-1/2 text-slate-200 p-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+            <button class="absolute right-2 top-1/2 -translate-y-1/2 text-[#052A80] p-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+        </div>
+    </section>
+
+    <main class="flex-1 px-6 py-4 grid grid-cols-2 grid-rows-2 gap-4">
+        
+        <button class="bg-[#ef4444] rounded-[32px] flex flex-col items-center justify-center gap-2 text-white shadow-lg active:scale-95 transition-all">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            <span class="text-[16px] font-black uppercase tracking-tighter">Fuga</span>
+        </button>
+
+        <button class="bg-[#f97316] rounded-[32px] flex flex-col items-center justify-center gap-2 text-white shadow-lg active:scale-95 transition-all">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path></svg>
+            <span class="text-[16px] font-black uppercase tracking-tighter text-center leading-none">Auxílio<br>Manual</span>
+        </button>
+
+        <button class="bg-[#eab308] rounded-[32px] flex flex-col items-center justify-center gap-2 text-white shadow-lg active:scale-95 transition-all">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path></svg>
+            <span class="text-[16px] font-black uppercase tracking-tighter text-center leading-none">Auxílio<br>Verbal</span>
+        </button>
+
+        <button class="bg-[#22c55e] rounded-[32px] flex flex-col items-center justify-center gap-2 text-white shadow-lg active:scale-95 transition-all">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span class="text-[16px] font-black uppercase tracking-tighter">Independente</span>
+        </button>
+
+    </main>
+
+    <footer class="p-6 bg-white border-t border-slate-100">
+        <button onclick="location.href='aluno.html'" 
+                class="w-full py-5 bg-[#052A80] rounded-[24px] text-white font-black text-xs uppercase tracking-[3px] shadow-lg active:scale-[0.97] transition-all">
+            Finalizar Sessão
+        </button>
+    </footer>
+
+</body>
+</html>
