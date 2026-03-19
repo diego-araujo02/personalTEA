@@ -16,6 +16,8 @@ body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); paddi
     position: sticky; top: 0; z-index: 100;
 }
 
+a{text-decoration: none;}
+
 .img__container{
     width: 100vw;
     height: 100vh;
