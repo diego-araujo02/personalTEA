@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Registro Detalhado - PersonalTEA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; color: #0F172A; -webkit-tap-highlight-color: transparent; }
+        
+        /* Estilos CSS para os estados ativos (Segmented Control e Botões) */
+        .scale-active { background-color: #052A80 !important; color: white !important; border-color: #052A80 !important; }
+        .prompt-active-red { background-color: #ef4444 !important; color: white !important; }
+        .prompt-active-orange { background-color: #f97316 !important; color: white !important; }
+        .prompt-active-yellow { background-color: #eab308 !important; color: white !important; }
+        .prompt-active-green { background-color: #22c55e !important; color: white !important; }
+    </style>
+</head>
+<body class="pb-32">
+
+    <header class="bg-white border-b border-slate-100 px-6 py-4 pt-10 sticky top-0 z-50">
+        <div class="flex items-center justify-between">
+            <button onclick="history.back()" class="p-2 -ml-2 text-slate-400 active:scale-90 transition-transform">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="text-center">
+                <h1 class="text-[10px] font-black uppercase tracking-[2px] text-slate-400">Sessão em Andamento</h1>
+                <p class="text-sm font-black text-[#0F172A]">Lucas Oliveira</p>
+            </div>
+            <button class="text-[#052A80] font-bold text-xs uppercase active:scale-90 transition-transform">Notas</button>
+        </div>
+    </header>
+
+    <main class="p-4 space-y-6">
+
+        <section class="bg-white rounded-[32px] shadow-sm border border-slate-100 overflow-hidden">
+            <div class="p-5 border-b border-slate-50 flex justify-between items-center bg-slate-50/20">
+                <h2 class="font-black text-[#052A80] uppercase text-sm tracking-tight">1. Circuito de Equilíbrio</h2>
+                <button class="text-slate-300 active:scale-90 transition-transform"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button>
+            </div>
+
+            <div class="px-2">
+                <table class="w-full">
+                    <thead>
+                        <tr class="text-[9px] font-black text-slate-400 uppercase tracking-widest border-b border-slate-50">
+                            <th class="py-3 px-2 text-left w-12">Tent.</th>
+                            <th class="py-3 px-2 text-left">Registro Completo (Prompt + Métricas)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-50">
+                        <tr>
+                            <td class="py-6 px-2 text-xs font-bold text-slate-400 align-top">01</td>
+                            <td class="py-6 px-2 space-y-6"> <div class="flex flex-col gap-1.5">
+                                    <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Prompt</span>
+                                    <div class="flex bg-slate-100 p-1.5 rounded-xl gap-1">
+                                        <button class="flex-1 py-2.5 rounded-lg text-[10px] font-black uppercase prompt-active-red active:scale-95 transition-all">Fuga</button>
+                                        <button class="flex-1 py-2.5 rounded-lg text-[10px] font-black uppercase text-slate-400 active:scale-95 transition-all">Man</button>
+                                        <button class="flex-1 py-2.5 rounded-lg text-[10px] font-black uppercase text-slate-400 active:scale-95 transition-all">Ver</button>
+                                        <button class="flex-1 py-2.5 rounded-lg text-[10px] font-black uppercase text-slate-400 active:scale-95 transition-all">Ind</button>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col gap-5"> <div class="flex flex-col gap-2">
+                                        <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Velocidade de Execução</span>
+                                        <div class="flex justify-between gap-2"> 
+                                            <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">1</button>
+                                            <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">2</button>
+                                            <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 scale-active active:scale-95 transition-all">3</button>
+                                            <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">4</button>
+                                            <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">5</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col gap-2">
+                                        <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Manteve o Foco?</span>
+                                        <div class="flex gap-2">
+                                            <button class="flex-1 py-3 rounded-xl border-2 border-slate-200 text-[11px] font-black uppercase text-slate-400 active:scale-95 transition-all">Não</button>
+                                            <button class="flex-1 py-3 rounded-xl border-2 border-[#22c55e] bg-green-50 text-[11px] font-black uppercase text-green-600 active:scale-95 transition-all">Sim</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="w-full py-4 my-4 bg-slate-50 border-2 border-dashed border-slate-200 rounded-xl text-[10px] font-black uppercase tracking-widest text-[#052A80] hover:bg-slate-100/50 active:scale-[0.98] transition-all">
+                    + Adicionar Tentativa
+                </button>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-[32px] shadow-sm border border-slate-100 overflow-hidden">
+            <div class="p-5 border-b border-slate-50 flex justify-between items-center bg-slate-50/20">
+                <h2 class="font-black text-[#052A80] uppercase text-sm tracking-tight">2. Caminhada no banco</h2>
+                <button class="text-slate-300 active:scale-90 transition-transform"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="1"></circle></svg></button>
+            </div>
+            <div class="px-2">
+                <table class="w-full">
+                    <tbody class="divide-y divide-slate-50">
+                        <tr>
+                            <td class="py-6 px-2 text-xs font-bold text-slate-400 align-top">01</td>
+                            <td class="py-6 px-2 space-y-4">
+                                <div class="flex bg-slate-100 p-1 rounded-xl gap-1">
+                                    <button class="flex-1 py-2 rounded-lg text-[9px] font-black uppercase text-slate-400 active:scale-95 transition-all">Fuga</button>
+                                    <button class="flex-1 py-2 rounded-lg text-[9px] font-black uppercase text-slate-400 active:scale-95 transition-all">Man</button>
+                                    <button class="flex-1 py-2 rounded-lg text-[9px] font-black uppercase prompt-active-yellow active:scale-95 transition-all">Ver</button>
+                                    <button class="flex-1 py-2 rounded-lg text-[9px] font-black uppercase text-slate-400 active:scale-95 transition-all">Ind</button>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Equilíbro</span>
+                                    <div class="flex justify-between gap-1">
+                                        <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">1</button>
+                                            <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">2</button>
+                                            <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 scale-active active:scale-95 transition-all">3</button>
+                                            <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">4</button>
+                                            <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">5</button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Velocidade</span>
+                                    <div class="flex justify-between gap-1">
+                                       <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">1</button>
+                                            <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">2</button>
+                                            <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 scale-active active:scale-95 transition-all">3</button>
+                                            <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">4</button>
+                                            <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">5</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-6 px-2 text-xs font-bold text-slate-400 align-top">02</td>
+                            <td class="py-6 px-2 space-y-4">
+                                <div class="flex bg-slate-100 p-1 rounded-xl gap-1">
+                                    <button class="flex-1 py-2 rounded-lg text-[9px] font-black uppercase text-slate-400 active:scale-95 transition-all">Fuga</button>
+                                    <button class="flex-1 py-2 rounded-lg text-[9px] font-black uppercase text-slate-400 active:scale-95 transition-all">Man</button>
+                                    <button class="flex-1 py-2 rounded-lg text-[9px] font-black uppercase text-slate-400 active:scale-95 transition-all">Ver</button>
+                                    <button class="flex-1 py-2 rounded-lg text-[9px] font-black uppercase prompt-active-green active:scale-95 transition-all">Ind</button>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Equilíbro</span>
+                                    <div class="flex justify-between gap-1">
+                                        <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">1</button>
+                                        <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">2</button>
+                                        <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">3</button>
+                                        <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">4</button>
+                                        <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 scale-active active:scale-95 transition-all">5</button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Velocidade</span>
+                                    <div class="flex justify-between gap-1">
+                                        <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">1</button>
+                                        <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">2</button>
+                                        <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">3</button>
+                                        <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 scale-active active:scale-95 transition-all">4</button>
+                                        <button class="flex-1 h-10 rounded-xl border-2 border-slate-200 text-sm font-bold text-slate-400 active:scale-95 transition-all">5</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="w-full py-4 my-4 bg-slate-50 border-2 border-dashed border-slate-200 rounded-xl text-[10px] font-black uppercase tracking-widest text-[#052A80] hover:bg-slate-100/50 active:scale-[0.98] transition-all">
+                    + Adicionar Tentativa
+                </button>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-[32px] shadow-sm border border-slate-100 overflow-hidden">
+            <div class="p-5 border-b border-slate-50 flex justify-between items-center bg-slate-50/20">
+                <h2 class="font-black text-[#052A80] uppercase text-sm tracking-tight">3. Arremesso de Bola</h2>
+                <button class="text-slate-300 active:scale-90 transition-transform"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="1"></circle></svg></button>
+            </div>
+            <div class="px-2 pb-4 text-center">
+                <p class="p-10 text-[10px] font-bold text-slate-300 uppercase tracking-widest">Toque em <span class="font-black text-slate-400">+</span> abaixo para registrar</p>
+                <button class="w-full py-4 my-2 bg-slate-50 border-2 border-dashed border-slate-200 rounded-xl text-[10px] font-black uppercase tracking-widest text-[#052A80] hover:bg-slate-100/50 active:scale-[0.98] transition-all">
+                    + Adicionar Tentativa
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="fixed bottom-0 left-0 right-0 p-6 bg-white/90 backdrop-blur-lg border-t border-slate-100">
+        <button onclick="location.href='index.html'" 
+                class="w-full py-5 bg-[#052A80] rounded-2xl text-white font-black text-xs uppercase tracking-[3px] shadow-xl active:scale-95 transition-all">
+            Finalizar e Salvar
+        </button>
+    </footer>
+
+</body>
+</html>

@@ -3,35 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Registro por Botões - PersonalTEA</title>
-    <link rel="icon" href="../imagens/logo-personalTEA.svg" type="image/svg+xml">
+    <title>Registro da Apresentação - PersonalTEA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
         body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
         
         .btn-shadow { 
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
-            transition: all 0.1s; /* transition-all duration-100 */
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            transition: all 0.1s;
+        }
+        .btn-shadow:active {
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+            transform: scale(0.98);
         }
 
-        .btn-shadow:active {
-            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06); /* active:shadow-inner */
-            transform: scale(0.98); /* active:scale-[0.98] */
-        }
+        /* Classes para os botões selecionados no carrossel */
+        .foco-ativo { background-color: #052A80 !important; color: white !important; border-color: #052A80 !important; }
+        .postura-ativa { background-color: #d97706 !important; color: white !important; border-color: #d97706 !important; }
+        
+        /* Ocultar slides inativos */
+        .slide-hidden { display: none !important; }
     </style>
 </head>
-<body class="bg-[#f8fafc] h-screen flex flex-col overflow-hidden">
+<body class="bg-[#f8fafc] h-[100dvh] flex flex-col overflow-hidden">
 
-    <header class="bg-white border-b border-slate-100 px-6 py-4 pt-12">
+    <header class="bg-white border-b border-slate-100 px-6 py-3 pt-10 shrink-0">
         <div class="flex items-center justify-between">
             <button class="p-2 bg-slate-50 rounded-full text-slate-400 active:scale-90 transition-transform">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
             </button>
             
             <div class="text-center">
-                <span class="text-[9px] font-bold text-[#052A80] uppercase tracking-[2px]">Exercício 1 de 4</span>
-                <h1 class="text-lg font-black text-[#0F172A] leading-tight">Circuito de Equilíbrio</h1>
+                <span class="text-[10px] font-bold text-[#052A80] uppercase tracking-[2px]">Métricas Customizadas</span>
+                <h1 class="text-xl font-black text-[#0F172A] leading-tight mt-1">Sessão de Edmilson</h1>
             </div>
 
             <button class="p-2 bg-slate-50 rounded-full text-[#052A80] active:scale-90 transition-transform">
@@ -40,60 +45,163 @@
         </div>
     </header>
 
-    <section class="px-6 py-4 bg-slate-50">
-        <div class="bg-white rounded-[24px] p-5 shadow-sm border border-slate-100 relative">
-            
-            <div id="q-escala" class="flex flex-col items-center">
-                <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-3">Velocidade de Execução</p>
-                <div class="flex gap-2 w-full justify-between">
-                    <button class="w-10 h-10 rounded-xl border-2 border-slate-100 text-slate-400 font-bold active:bg-[#052A80] active:text-white transition-all">1</button>
-                    <button class="w-10 h-10 rounded-xl border-2 border-slate-100 text-slate-400 font-bold active:bg-[#052A80] active:text-white transition-all">2</button>
-                    <button class="w-10 h-10 rounded-xl border-2 border-slate-100 text-slate-400 font-bold active:bg-[#052A80] active:text-white transition-all">3</button>
-                    <button class="w-10 h-10 rounded-xl border-2 border-slate-100 text-slate-400 font-bold active:bg-[#052A80] active:text-white transition-all">4</button>
-                    <button class="w-10 h-10 rounded-xl border-2 border-slate-100 text-slate-400 font-bold active:bg-[#052A80] active:text-white transition-all">5</button>
+    <div class="flex-1 flex flex-col w-full h-full">
+
+        <section class="flex-1 px-6 pt-6 pb-4 flex flex-col">
+            <div class="flex-1 bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 relative w-full flex flex-col justify-between">
+                
+                <button onclick="prevSlide()" class="absolute left-1 top-1/2 -translate-y-1/2 text-slate-300 p-2 active:scale-90 transition-transform z-10">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+
+                <div id="slides-container" class="px-12 flex-1 flex flex-col justify-center text-center">
+                    
+                    <div id="slide-1" class="slide-content flex flex-col items-center justify-center h-full">
+                        <p class="text-base font-black text-black uppercase tracking-widest mb-8 text-center">1. Nível de Foco</p>
+                        <div class="flex gap-2 w-full justify-center max-w-md mx-auto">
+                            <button onclick="selecionarFoco(1)" id="foco-1" class="btn-foco w-[60px] h-[60px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">1</button>
+                            <button onclick="selecionarFoco(2)" id="foco-2" class="btn-foco w-[60px] h-[60px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">2</button>
+                            <button onclick="selecionarFoco(3)" id="foco-3" class="btn-foco w-[60px] h-[60px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">3</button>
+                            <button onclick="selecionarFoco(4)" id="foco-4" class="btn-foco w-[60px] h-[60px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">4</button>
+                            <button onclick="selecionarFoco(5)" id="foco-5" class="btn-foco w-[60px] h-[60px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">5</button>
+                        </div>
+                    </div>
+
+                    <div id="slide-2" class="slide-content slide-hidden flex flex-col items-center justify-center h-full w-full">
+                        <p class="text-base font-black text-black uppercase tracking-widest mb-8">2. Postura</p>
+                        <div class="flex gap-4 w-full max-w-md mx-auto">
+                            <button onclick="selecionarPostura('Postura Ereta')" id="postura-Ereta" class="btn-postura flex-1 py-8 rounded-2xl border-2 border-slate-200 text-black text-[15px] font-black uppercase active:scale-95 transition-all">Ereta</button>
+                            <button onclick="selecionarPostura('Postura Inclinada')" id="postura-Inclinada" class="btn-postura flex-1 py-8 rounded-2xl border-2 border-slate-200 text-black text-[15px] font-black uppercase active:scale-95 transition-all">Inclinada</button>
+                        </div>
+                    </div>
+
+                    <div id="slide-3" class="slide-content slide-hidden flex flex-col items-center justify-center h-full w-full">
+                        <p class="text-base font-black text-black uppercase tracking-widest mb-8">3. Ação Alvo (Tirou Foto?)</p>
+                        <button onclick="registrarFoto()" class="w-full max-w-sm flex items-center justify-center gap-4 bg-green-100 border-2 border-green-200 text-green-700 py-8 rounded-2xl font-black text-lg uppercase active:scale-95 transition-transform shadow-sm">
+                            Registrar Foto <span id="contador-fotos" class="bg-green-600 text-white px-4 py-2 rounded-lg text-base">0</span>
+                        </button>
+                    </div>
+
+                </div>
+
+                <button onclick="nextSlide()" class="absolute right-1 top-1/2 -translate-y-1/2 text-[#052A80] p-2 active:scale-90 transition-transform z-10">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+
+                <div class="flex justify-center gap-2 mt-4 shrink-0">
+                    <div id="dot-1" class="dot w-6 h-2 bg-[#052A80] rounded-full transition-all duration-300"></div>
+                    <div id="dot-2" class="dot w-2 h-2 bg-slate-200 rounded-full transition-all duration-300"></div>
+                    <div id="dot-3" class="dot w-2 h-2 bg-slate-200 rounded-full transition-all duration-300"></div>
                 </div>
             </div>
+        </section>
 
-            <div class="flex justify-center gap-1.5 mt-4">
-                <div class="w-4 h-1 bg-[#052A80] rounded-full"></div>
-                <div class="w-1.5 h-1 bg-slate-200 rounded-full"></div>
+        <main class="flex-1 bg-white rounded-t-[40px] shadow-[0_-15px_40px_rgba(0,0,0,0.05)] border-t border-slate-100 p-6 flex flex-col">
+            <div class="flex-1 grid grid-cols-2 grid-rows-2 gap-4">
+                
+                <button class="bg-[#ef4444] rounded-[28px] w-full h-full flex flex-col items-center justify-center gap-2 text-white shadow-md active:scale-95 transition-all group">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    <span class="text-sm font-black uppercase tracking-tight">Fuga</span>
+                </button>
+
+                <button class="bg-[#f97316] rounded-[28px] w-full h-full flex flex-col items-center justify-center gap-2 text-white shadow-md active:scale-95 transition-all group">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path></svg>
+                    <span class="text-sm font-black uppercase tracking-tight text-center leading-none">Manual</span>
+                </button>
+
+                <button class="bg-[#eab308] rounded-[28px] w-full h-full flex flex-col items-center justify-center gap-2 text-white shadow-md active:scale-95 transition-all group">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path></svg>
+                    <span class="text-sm font-black uppercase tracking-tight text-center leading-none">Verbal</span>
+                </button>
+
+                <button class="bg-[#22c55e] rounded-[28px] w-full h-full flex flex-col items-center justify-center gap-2 text-white shadow-md active:scale-95 transition-all group">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span class="text-sm font-black uppercase tracking-tight">Independente</span>
+                </button>
+
             </div>
+        </main>
 
-            <button class="absolute left-2 top-1/2 -translate-y-1/2 text-slate-200 p-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-            <button class="absolute right-2 top-1/2 -translate-y-1/2 text-[#052A80] p-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
-        </div>
-    </section>
+    </div>
 
-    <main class="flex-1 px-6 py-4 grid grid-cols-2 grid-rows-2 gap-4">
-        
-        <button class="bg-[#ef4444] rounded-[32px] flex flex-col items-center justify-center gap-2 text-white shadow-lg active:scale-95 transition-all">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            <span class="text-[16px] font-black uppercase tracking-tighter">Fuga</span>
-        </button>
-
-        <button class="bg-[#f97316] rounded-[32px] flex flex-col items-center justify-center gap-2 text-white shadow-lg active:scale-95 transition-all">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path></svg>
-            <span class="text-[16px] font-black uppercase tracking-tighter text-center leading-none">Auxílio<br>Manual</span>
-        </button>
-
-        <button class="bg-[#eab308] rounded-[32px] flex flex-col items-center justify-center gap-2 text-white shadow-lg active:scale-95 transition-all">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path></svg>
-            <span class="text-[16px] font-black uppercase tracking-tighter text-center leading-none">Auxílio<br>Verbal</span>
-        </button>
-
-        <button class="bg-[#22c55e] rounded-[32px] flex flex-col items-center justify-center gap-2 text-white shadow-lg active:scale-95 transition-all">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span class="text-[16px] font-black uppercase tracking-tighter">Independente</span>
-        </button>
-
-    </main>
-
-    <footer class="p-6 bg-white border-t border-slate-100">
-        <button onclick="location.href='aluno.html'" 
-                class="w-full py-5 bg-[#052A80] rounded-[24px] text-white font-black text-xs uppercase tracking-[3px] shadow-lg active:scale-[0.97] transition-all">
+    <footer class="p-6 bg-white shrink-0 z-10 relative">
+        <button onclick="finalizarPitch()" 
+                class="w-full py-5 bg-[#052A80] rounded-[24px] text-white font-black text-sm uppercase tracking-[3px] shadow-lg active:scale-[0.97] transition-all">
             Finalizar Sessão
         </button>
     </footer>
 
+    <script>
+        // --- LÓGICA DO CARROSSEL ---
+        let currentSlide = 1;
+        const totalSlides = 3;
+
+        function updateCarousel() {
+            for(let i = 1; i <= totalSlides; i++) {
+                document.getElementById(`slide-${i}`).classList.add('slide-hidden');
+                
+                const dot = document.getElementById(`dot-${i}`);
+                dot.classList.remove('w-6', 'bg-[#052A80]');
+                dot.classList.add('w-2', 'bg-slate-200');
+            }
+            document.getElementById(`slide-${currentSlide}`).classList.remove('slide-hidden');
+            const activeDot = document.getElementById(`dot-${currentSlide}`);
+            activeDot.classList.remove('w-2', 'bg-slate-200');
+            activeDot.classList.add('w-6', 'bg-[#052A80]');
+        }
+
+        function nextSlide() {
+            currentSlide = currentSlide === totalSlides ? 1 : currentSlide + 1;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = currentSlide === 1 ? totalSlides : currentSlide - 1;
+            updateCarousel();
+        }
+
+        // --- LÓGICA DE GRAVAÇÃO DOS DADOS ---
+        let pitchFoco = 5; 
+        let pitchPostura = 'Postura Ereta';
+        let pitchFotos = 0;
+
+        function selecionarFoco(valor) {
+            pitchFoco = valor;
+            document.querySelectorAll('.btn-foco').forEach(btn => {
+                btn.classList.remove('foco-ativo');
+                btn.classList.add('text-black', 'border-slate-200');
+            });
+            const ativo = document.getElementById(`foco-${valor}`);
+            ativo.classList.remove('text-black', 'border-slate-200');
+            ativo.classList.add('foco-ativo');
+        }
+
+        function selecionarPostura(tipo) {
+            pitchPostura = tipo;
+            const idSufixo = tipo.split(' ')[1]; 
+            document.querySelectorAll('.btn-postura').forEach(btn => {
+                btn.classList.remove('postura-ativa');
+                btn.classList.add('text-black', 'border-slate-200');
+            });
+            const ativo = document.getElementById(`postura-${idSufixo}`);
+            ativo.classList.remove('text-black', 'border-slate-200');
+            ativo.classList.add('postura-ativa');
+        }
+
+        function registrarFoto() {
+            pitchFotos++;
+            document.getElementById('contador-fotos').innerText = pitchFotos;
+        }
+
+        function finalizarPitch() {
+            // Salva os valores exatos clicados na memória
+            localStorage.setItem('pitchFoco', pitchFoco);
+            localStorage.setItem('pitchPostura', pitchPostura);
+            localStorage.setItem('pitchFotos', pitchFotos);
+            
+            // Pula pra tela de resumo
+            window.location.href = 'resumo-sessao.html';
+        }
+    </script>
 </body>
 </html>
