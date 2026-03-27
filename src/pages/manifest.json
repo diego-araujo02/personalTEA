@@ -1,0 +1,8 @@
+{
+  "name": "PersonalTEA",
+  "short_name": "PersonalTEA",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#052A80"
+}
