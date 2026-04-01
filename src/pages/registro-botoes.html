@@ -18,13 +18,8 @@
             transform: scale(0.98);
         }
 
-        /* Classes para os botões selecionados no carrossel */
         .foco-ativo { background-color: #052A80 !important; color: white !important; border-color: #052A80 !important; }
-        
-        /* COR DA POSTURA ATUALIZADA PARA O AZUL */
         .postura-ativa { background-color: #052A80 !important; color: white !important; border-color: #052A80 !important; }
-        
-        /* Ocultar slides inativos */
         .slide-hidden { display: none !important; }
     </style>
     <meta name="mobile-web-app-capable" content="yes">
@@ -34,7 +29,7 @@
 </head>
 <body class="bg-[#f8fafc] h-[100dvh] flex flex-col overflow-hidden">
 
-    <header class="bg-white border-b border-slate-100 px-6 py-3 pt-10 shrink-0">
+    <header class="bg-white border-b border-slate-100 px-5 py-3 pt-6 shrink-0">
         <div class="flex items-center justify-between">
             <button class="p-2 bg-slate-50 rounded-full text-slate-400 active:scale-90 transition-transform">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
@@ -53,52 +48,52 @@
 
     <div class="flex-1 flex flex-col w-full h-full">
 
-        <section class="px-6 pt-6 pb-4 shrink-0 flex flex-col">
-            <div class="h-[240px] bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 relative w-full flex flex-col justify-between">
+        <section class="px-5 pt-4 pb-3 shrink-0 flex flex-col">
+            <div class="h-[190px] bg-white rounded-[24px] p-4 shadow-sm border border-slate-100 relative w-full flex flex-col justify-between">
                 
                 <button onclick="prevSlide()" class="absolute left-1 top-1/2 -translate-y-1/2 text-slate-300 p-2 active:scale-90 transition-transform z-10">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
                 </button>
 
-                <div id="slides-container" class="px-12 flex-1 flex flex-col justify-center text-center">
+                <div id="slides-container" class="px-10 flex-1 flex flex-col justify-center text-center">
                     
                     <div id="slide-1" class="slide-content flex flex-col items-center justify-center h-full">
-                        <p class="text-base font-black text-black uppercase tracking-widest mb-6 text-center">1. Nível de Foco</p>
+                        <p class="text-sm font-black text-black uppercase tracking-widest mb-3 text-center">1. Nível de Foco</p>
                         <div class="flex gap-2 w-full justify-center max-w-md mx-auto">
-                            <button onclick="selecionarFoco(1)" id="foco-1" class="btn-foco w-[55px] h-[55px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">1</button>
-                            <button onclick="selecionarFoco(2)" id="foco-2" class="btn-foco w-[55px] h-[55px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">2</button>
-                            <button onclick="selecionarFoco(3)" id="foco-3" class="btn-foco w-[55px] h-[55px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">3</button>
-                            <button onclick="selecionarFoco(4)" id="foco-4" class="btn-foco w-[55px] h-[55px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">4</button>
-                            <button onclick="selecionarFoco(5)" id="foco-5" class="btn-foco w-[55px] h-[55px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">5</button>
+                            <button onclick="selecionarFoco(1)" id="foco-1" class="btn-foco w-[48px] h-[48px] rounded-xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-xl flex items-center justify-center">1</button>
+                            <button onclick="selecionarFoco(2)" id="foco-2" class="btn-foco w-[48px] h-[48px] rounded-xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-xl flex items-center justify-center">2</button>
+                            <button onclick="selecionarFoco(3)" id="foco-3" class="btn-foco w-[48px] h-[48px] rounded-xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-xl flex items-center justify-center">3</button>
+                            <button onclick="selecionarFoco(4)" id="foco-4" class="btn-foco w-[48px] h-[48px] rounded-xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-xl flex items-center justify-center">4</button>
+                            <button onclick="selecionarFoco(5)" id="foco-5" class="btn-foco w-[48px] h-[48px] rounded-xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-xl flex items-center justify-center">5</button>
                         </div>
                     </div>
 
                     <div id="slide-2" class="slide-content slide-hidden flex flex-col items-center justify-center h-full w-full">
-                        <p class="text-base font-black text-black uppercase tracking-widest mb-6">2. Postura</p>
-                        <div class="flex gap-4 w-full max-w-md mx-auto">
-                            <button onclick="selecionarPostura('Postura Ereta')" id="postura-Ereta" class="btn-postura flex-1 py-6 rounded-2xl border-2 border-slate-200 text-black text-[15px] font-black uppercase active:scale-95 transition-all">Ereta</button>
-                            <button onclick="selecionarPostura('Postura Inclinada')" id="postura-Inclinada" class="btn-postura flex-1 py-6 rounded-2xl border-2 border-slate-200 text-black text-[15px] font-black uppercase active:scale-95 transition-all">Inclinada</button>
+                        <p class="text-sm font-black text-black uppercase tracking-widest mb-3">2. Postura</p>
+                        <div class="flex gap-3 w-full max-w-md mx-auto">
+                            <button onclick="selecionarPostura('Postura Ereta')" id="postura-Ereta" class="btn-postura flex-1 py-4 rounded-xl border-2 border-slate-200 text-black text-sm font-black uppercase active:scale-95 transition-all">Ereta</button>
+                            <button onclick="selecionarPostura('Postura Inclinada')" id="postura-Inclinada" class="btn-postura flex-1 py-4 rounded-xl border-2 border-slate-200 text-black text-sm font-black uppercase active:scale-95 transition-all">Inclinada</button>
                         </div>
                     </div>
 
                     <div id="slide-3" class="slide-content slide-hidden flex flex-col items-center justify-center h-full w-full">
-                        <p class="text-base font-black text-black uppercase tracking-widest mb-4">3. Ação Alvo (Fotos)</p>
+                        <p class="text-sm font-black text-black uppercase tracking-widest mb-3">3. Ação Alvo (Fotos)</p>
                         
                         <div class="flex flex-col items-center w-full">
-                            <svg class="mb-4 text-slate-400" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg class="mb-3 text-slate-400" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
                                 <circle cx="12" cy="13" r="4"></circle>
                             </svg>
 
-                            <div class="flex items-center justify-between bg-slate-50 px-3 py-2 rounded-3xl w-full max-w-[220px]">
-                                <button onclick="alterarFotos(-1)" class="w-12 h-12 flex items-center justify-center bg-[#64748B] text-white rounded-[14px] active:scale-90 transition-transform shadow-sm">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            <div class="flex items-center justify-between bg-slate-50 px-3 py-2 rounded-3xl w-full max-w-[200px]">
+                                <button onclick="alterarFotos(-1)" class="w-10 h-10 flex items-center justify-center bg-[#64748B] text-white rounded-[12px] active:scale-90 transition-transform shadow-sm">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                                 </button>
 
-                                <span id="contador-fotos" class="text-3xl font-black text-[#0F172A] w-12 text-center">0</span>
+                                <span id="contador-fotos" class="text-2xl font-black text-[#0F172A] w-12 text-center">0</span>
 
-                                <button onclick="alterarFotos(1)" class="w-12 h-12 flex items-center justify-center bg-[#64748B] text-white rounded-[14px] active:scale-90 transition-transform shadow-sm">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                <button onclick="alterarFotos(1)" class="w-10 h-10 flex items-center justify-center bg-[#64748B] text-white rounded-[12px] active:scale-90 transition-transform shadow-sm">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                                 </button>
                             </div>
                         </div>
@@ -110,7 +105,7 @@
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                 </button>
 
-                <div class="flex justify-center gap-2 mt-4 shrink-0">
+                <div class="flex justify-center gap-2 mt-2 shrink-0">
                     <div id="dot-1" class="dot w-6 h-2 bg-[#052A80] rounded-full transition-all duration-300"></div>
                     <div id="dot-2" class="dot w-2 h-2 bg-slate-200 rounded-full transition-all duration-300"></div>
                     <div id="dot-3" class="dot w-2 h-2 bg-slate-200 rounded-full transition-all duration-300"></div>
@@ -118,26 +113,26 @@
             </div>
         </section>
 
-        <main class="flex-1 bg-white rounded-t-[40px] shadow-[0_-15px_40px_rgba(0,0,0,0.05)] border-t border-slate-100 p-6 flex flex-col">
-            <div class="flex-1 grid grid-cols-2 grid-rows-2 gap-4">
+        <main class="flex-1 bg-white rounded-t-[32px] shadow-[0_-15px_40px_rgba(0,0,0,0.05)] border-t border-slate-100 p-5 flex flex-col">
+            <div class="flex-1 grid grid-cols-2 grid-rows-2 gap-3">
                 
-                <button class="bg-[#ef4444] rounded-[28px] w-full h-full flex flex-col items-center justify-center gap-2 text-white shadow-md active:scale-95 transition-all group">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <button class="bg-[#ef4444] rounded-[24px] w-full h-full flex flex-col items-center justify-center gap-2 text-white shadow-md active:scale-95 transition-all group">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     <span class="text-sm font-black uppercase tracking-tight">Fuga</span>
                 </button>
 
-                <button class="bg-[#f97316] rounded-[28px] w-full h-full flex flex-col items-center justify-center gap-2 text-white shadow-md active:scale-95 transition-all group">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path></svg>
+                <button class="bg-[#f97316] rounded-[24px] w-full h-full flex flex-col items-center justify-center gap-2 text-white shadow-md active:scale-95 transition-all group">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path></svg>
                     <span class="text-sm font-black uppercase tracking-tight text-center leading-none">Manual</span>
                 </button>
 
-                <button class="bg-[#eab308] rounded-[28px] w-full h-full flex flex-col items-center justify-center gap-2 text-white shadow-md active:scale-95 transition-all group">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path></svg>
+                <button class="bg-[#eab308] rounded-[24px] w-full h-full flex flex-col items-center justify-center gap-2 text-white shadow-md active:scale-95 transition-all group">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path></svg>
                     <span class="text-sm font-black uppercase tracking-tight text-center leading-none">Verbal</span>
                 </button>
 
-                <button class="bg-[#22c55e] rounded-[28px] w-full h-full flex flex-col items-center justify-center gap-2 text-white shadow-md active:scale-95 transition-all group">
-                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <button class="bg-[#22c55e] rounded-[24px] w-full h-full flex flex-col items-center justify-center gap-2 text-white shadow-md active:scale-95 transition-all group">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     <span class="text-sm font-black uppercase tracking-tight">Independente</span>
                 </button>
 
@@ -146,15 +141,15 @@
 
     </div>
 
-    <footer class="p-6 bg-white shrink-0 z-10 relative">
+    <footer class="p-4 bg-white shrink-0 z-10 relative">
         <button onclick="finalizarPitch()" 
-                class="w-full py-5 bg-[#052A80] rounded-[24px] text-white font-black text-sm uppercase tracking-[3px] shadow-lg active:scale-[0.97] transition-all">
+                class="w-full py-4 bg-[#052A80] rounded-[20px] text-white font-black text-sm uppercase tracking-[3px] shadow-lg active:scale-[0.97] transition-all">
             Finalizar Sessão
         </button>
     </footer>
 
     <script>
-        // --- LÓGICA DO CARROSSEL ---
+        // Lógica permanece igual
         let currentSlide = 1;
         const totalSlides = 3;
 
@@ -182,12 +177,10 @@
             updateCarousel();
         }
 
-        // --- LÓGICA DE GRAVAÇÃO DOS DADOS ---
         let pitchFoco = 1; 
         let pitchPostura = 'Postura Ereta';
         let pitchFotos = 0;
 
-        // Já inicia a primeira opção como ativa visualmente (ajuste visual na carga)
         window.onload = function() {
             selecionarFoco(1);
         }
@@ -215,10 +208,8 @@
             ativo.classList.add('postura-ativa');
         }
 
-        // NOVA FUNÇÃO DO CONTADOR (+ e -)
         function alterarFotos(valor) {
             pitchFotos += valor;
-            // Garante que não mostre números negativos
             if (pitchFotos < 0) {
                 pitchFotos = 0;
             }
@@ -226,12 +217,9 @@
         }
 
         function finalizarPitch() {
-            // Salva os valores exatos clicados na memória
             localStorage.setItem('pitchFoco', pitchFoco);
             localStorage.setItem('pitchPostura', pitchPostura);
             localStorage.setItem('pitchFotos', pitchFotos);
-            
-            // Pula pra tela de resumo
             window.location.href = 'resumo-sessao.html';
         }
     </script>
