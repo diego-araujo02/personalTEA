@@ -20,7 +20,9 @@
 
         /* Classes para os botões selecionados no carrossel */
         .foco-ativo { background-color: #052A80 !important; color: white !important; border-color: #052A80 !important; }
-        .postura-ativa { background-color: #d97706 !important; color: white !important; border-color: #d97706 !important; }
+        
+        /* COR DA POSTURA ATUALIZADA PARA O AZUL */
+        .postura-ativa { background-color: #052A80 !important; color: white !important; border-color: #052A80 !important; }
         
         /* Ocultar slides inativos */
         .slide-hidden { display: none !important; }
@@ -51,8 +53,8 @@
 
     <div class="flex-1 flex flex-col w-full h-full">
 
-        <section class="flex-1 px-6 pt-6 pb-4 flex flex-col">
-            <div class="flex-1 bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 relative w-full flex flex-col justify-between">
+        <section class="px-6 pt-6 pb-4 shrink-0 flex flex-col">
+            <div class="h-[240px] bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 relative w-full flex flex-col justify-between">
                 
                 <button onclick="prevSlide()" class="absolute left-1 top-1/2 -translate-y-1/2 text-slate-300 p-2 active:scale-90 transition-transform z-10">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
@@ -61,29 +63,45 @@
                 <div id="slides-container" class="px-12 flex-1 flex flex-col justify-center text-center">
                     
                     <div id="slide-1" class="slide-content flex flex-col items-center justify-center h-full">
-                        <p class="text-base font-black text-black uppercase tracking-widest mb-8 text-center">1. Nível de Foco</p>
+                        <p class="text-base font-black text-black uppercase tracking-widest mb-6 text-center">1. Nível de Foco</p>
                         <div class="flex gap-2 w-full justify-center max-w-md mx-auto">
-                            <button onclick="selecionarFoco(1)" id="foco-1" class="btn-foco w-[60px] h-[60px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">1</button>
-                            <button onclick="selecionarFoco(2)" id="foco-2" class="btn-foco w-[60px] h-[60px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">2</button>
-                            <button onclick="selecionarFoco(3)" id="foco-3" class="btn-foco w-[60px] h-[60px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">3</button>
-                            <button onclick="selecionarFoco(4)" id="foco-4" class="btn-foco w-[60px] h-[60px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">4</button>
-                            <button onclick="selecionarFoco(5)" id="foco-5" class="btn-foco w-[60px] h-[60px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">5</button>
+                            <button onclick="selecionarFoco(1)" id="foco-1" class="btn-foco w-[55px] h-[55px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">1</button>
+                            <button onclick="selecionarFoco(2)" id="foco-2" class="btn-foco w-[55px] h-[55px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">2</button>
+                            <button onclick="selecionarFoco(3)" id="foco-3" class="btn-foco w-[55px] h-[55px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">3</button>
+                            <button onclick="selecionarFoco(4)" id="foco-4" class="btn-foco w-[55px] h-[55px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">4</button>
+                            <button onclick="selecionarFoco(5)" id="foco-5" class="btn-foco w-[55px] h-[55px] rounded-2xl border-2 border-slate-200 text-black font-black active:scale-95 transition-all text-2xl flex items-center justify-center">5</button>
                         </div>
                     </div>
 
                     <div id="slide-2" class="slide-content slide-hidden flex flex-col items-center justify-center h-full w-full">
-                        <p class="text-base font-black text-black uppercase tracking-widest mb-8">2. Postura</p>
+                        <p class="text-base font-black text-black uppercase tracking-widest mb-6">2. Postura</p>
                         <div class="flex gap-4 w-full max-w-md mx-auto">
-                            <button onclick="selecionarPostura('Postura Ereta')" id="postura-Ereta" class="btn-postura flex-1 py-8 rounded-2xl border-2 border-slate-200 text-black text-[15px] font-black uppercase active:scale-95 transition-all">Ereta</button>
-                            <button onclick="selecionarPostura('Postura Inclinada')" id="postura-Inclinada" class="btn-postura flex-1 py-8 rounded-2xl border-2 border-slate-200 text-black text-[15px] font-black uppercase active:scale-95 transition-all">Inclinada</button>
+                            <button onclick="selecionarPostura('Postura Ereta')" id="postura-Ereta" class="btn-postura flex-1 py-6 rounded-2xl border-2 border-slate-200 text-black text-[15px] font-black uppercase active:scale-95 transition-all">Ereta</button>
+                            <button onclick="selecionarPostura('Postura Inclinada')" id="postura-Inclinada" class="btn-postura flex-1 py-6 rounded-2xl border-2 border-slate-200 text-black text-[15px] font-black uppercase active:scale-95 transition-all">Inclinada</button>
                         </div>
                     </div>
 
                     <div id="slide-3" class="slide-content slide-hidden flex flex-col items-center justify-center h-full w-full">
-                        <p class="text-base font-black text-black uppercase tracking-widest mb-8">3. Ação Alvo (Tirou Foto?)</p>
-                        <button onclick="registrarFoto()" class="w-full max-w-sm flex items-center justify-center gap-4 bg-green-100 border-2 border-green-200 text-green-700 py-8 rounded-2xl font-black text-lg uppercase active:scale-95 transition-transform shadow-sm">
-                            Registrar Foto <span id="contador-fotos" class="bg-green-600 text-white px-4 py-2 rounded-lg text-base">0</span>
-                        </button>
+                        <p class="text-base font-black text-black uppercase tracking-widest mb-4">3. Ação Alvo (Fotos)</p>
+                        
+                        <div class="flex flex-col items-center w-full">
+                            <svg class="mb-4 text-slate-400" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                <circle cx="12" cy="13" r="4"></circle>
+                            </svg>
+
+                            <div class="flex items-center justify-between bg-slate-50 px-3 py-2 rounded-3xl w-full max-w-[220px]">
+                                <button onclick="alterarFotos(-1)" class="w-12 h-12 flex items-center justify-center bg-[#64748B] text-white rounded-[14px] active:scale-90 transition-transform shadow-sm">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                </button>
+
+                                <span id="contador-fotos" class="text-3xl font-black text-[#0F172A] w-12 text-center">0</span>
+
+                                <button onclick="alterarFotos(1)" class="w-12 h-12 flex items-center justify-center bg-[#64748B] text-white rounded-[14px] active:scale-90 transition-transform shadow-sm">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -165,9 +183,14 @@
         }
 
         // --- LÓGICA DE GRAVAÇÃO DOS DADOS ---
-        let pitchFoco = 5; 
+        let pitchFoco = 1; 
         let pitchPostura = 'Postura Ereta';
         let pitchFotos = 0;
+
+        // Já inicia a primeira opção como ativa visualmente (ajuste visual na carga)
+        window.onload = function() {
+            selecionarFoco(1);
+        }
 
         function selecionarFoco(valor) {
             pitchFoco = valor;
@@ -192,8 +215,13 @@
             ativo.classList.add('postura-ativa');
         }
 
-        function registrarFoto() {
-            pitchFotos++;
+        // NOVA FUNÇÃO DO CONTADOR (+ e -)
+        function alterarFotos(valor) {
+            pitchFotos += valor;
+            // Garante que não mostre números negativos
+            if (pitchFotos < 0) {
+                pitchFotos = 0;
+            }
             document.getElementById('contador-fotos').innerText = pitchFotos;
         }
 
